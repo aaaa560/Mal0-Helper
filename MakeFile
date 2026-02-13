@@ -1,0 +1,32 @@
+# Nome do binário
+BINARY_NAME = malo
+
+# Comandos Go
+GOCMD = go
+GOBUILD = $(GOCMD) build
+GORUN = $(GOCMD) run
+GOCLEAN = $(GOCMD) clean
+
+# Default
+.DEFAULT_GOAL := build
+
+# Build
+build:
+	$(GOBUILD) -o $(BINARY_NAME) .
+.PHONY: build
+
+# Run
+run:
+	$(GORUN) .
+.PHONY: run
+
+# Install (instala globalmente)
+install:
+	$(GOCMD) install .
+.PHONY: install
+
+# Clean
+clean:
+	$(GOCLEAN)
+	rm -f $(BINARY_NAME)
+.PHONY: clean

@@ -467,6 +467,8 @@ func handleClean() {
 			err = os.Remove(entry.Name())
 			if err != nil {
 				fmt.Println("Erro ao remover "+entry.Name()+":", err)
+			} else {
+				fmt.Println("Pacote " + entry.Name() + " removido com sucesso!")
 			}
 		}
 	}
